@@ -56,24 +56,6 @@ namespace WebApplication1.Controllers
                     else continue;
                 }
             }
-            //ONLY FOR DEV PURPOSES 
-            foreach (var kvp in strCount)
-            {
-                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            }
-            Console.WriteLine("-----------------------------------");
-            foreach (var kvp in prices)
-            {
-                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            }
-            Console.WriteLine("-----------------------------------");
-            foreach (var kvp in offers)
-            {
-                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            }
-            ////////////
-            ///
-
 
             int total = 0;
             int offerTotal = 0;
@@ -90,26 +72,6 @@ namespace WebApplication1.Controllers
                     var tuple = offers[pair.Key];
                     int frequencyTerm = tuple.frequencyTerm;
                     int discountedPrice = tuple.discountedPrice;
-
-                    /*
-                    if (pair.Value % frequencyTerm == 0)
-                    {
-                        int charTotal = (pair.Value / frequencyTerm) * discountedPrice;
-                        total += charTotal;
-                    }
-                    else if (pair.Value < frequencyTerm)
-                    {
-                        Console.WriteLine(prices[pair.Key]);
-                        total += prices[pair.Key];
-                    }
-                    else
-                    {
-                        int discountedTotal = (pair.Value % frequencyTerm) * discountedPrice;
-                        int subTotal = (pair.Value / frequencyTerm) * prices[pair.Key];
-                        total += discountedTotal + subTotal;
-                        Console.WriteLine(total);
-                    }*/
-
                     
                     int nosOffer = pair.Value / frequencyTerm;
                     int remainderOffer = pair.Value % frequencyTerm;
